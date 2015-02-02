@@ -5,6 +5,7 @@ gulp.task('build', function() {
     sequence([
         'clean',
         'browserify',
-        'sass'
+        'vendor-scripts',
+        'styles'
     ]);
 });

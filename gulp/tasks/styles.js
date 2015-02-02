@@ -3,9 +3,9 @@ var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var minifycss    = require('gulp-minify-css');
 var sourcemaps   = require('gulp-sourcemaps');
-var config       = require('../config').sass;
+var config       = require('../config').styles;
 
-gulp.task('sass', function() {
+gulp.task('styles', function() {
     return sass(config.src, config.settings)
         .pipe(autoprefixer(config.support))
         .pipe(minifycss())
