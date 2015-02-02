@@ -21,6 +21,8 @@ module.exports = function() {
     };
 
     this.renderPhotos = function(array, el) {
+        el.innerHTML = '';
+
         for (var i = 0; i < array.length; i++) {
             var item =
                 '<li>' +

@@ -7,12 +7,18 @@ module.exports = {
     initialise: function() {
         var search = new Search;
 
-        search.buildSearchRequest('guitar');
-
         document.addEventListener('update-search', function() {
             search.photos = xhrResponse(search.xhr);
 
             search.renderPhotos(search.photos, $('.photo-list'));
+        });
+
+        $('.js-search-form').addEventListener('submit', function(e) {
+            var term = $('.js-search-input').value;
+
+            search.buildSearchRequest(term);
+
+            e.preventDefault();
         });
     }
 };
